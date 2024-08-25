@@ -1,0 +1,142 @@
+package games;
+
+
+
+import java.util.*;
+public class TicTacToe
+{
+   void main()
+   { 
+       int p[]=new int[20];
+       int v=0,q,c=0,r=5;
+      String a[][]=new String[3][3];
+      Scanner sc = new Scanner (System.in);
+      System.out.println("Player 1 is X");
+      System.out.println("Player 2 is O");
+      System.out.println("Enter Position");
+      System.out.println("here are ositions");
+      System.out.println("1 | 2 | 3");
+      System.out.println("4 | 5 | 6");
+      System.out.println("7 | 8 | 9");
+      
+      for(int i=0;i<r;i++)
+      { 
+          System.out.println("Player 1 turn");
+          int n=sc.nextInt();
+          
+           if (i!=0)
+             
+            {
+            for(q=0;q<p.length;q++)
+            {
+                if(p[q]==n)
+                 c++;
+                }
+                   if(c>1)
+                {
+                    System.out.println("no already entered");
+                    r=r+1;
+                    c=0;
+                }
+                else 
+               
+                c=0;
+            }
+        
+    
+
+        
+          
+          if (n==1)
+          a[0][0]="X";
+          else if (n==2)
+          a[0][1]="X";
+          else if (n==3)
+          a[0][2]="X";
+          else if (n==4)
+          a[1][0]="X";
+          else if (n==5)
+          a[1][1]="X";
+          else if (n==6)
+          a[1][2]="X";
+          else if (n==7)
+          a[2][0]="X";
+          else if (n==8)
+          a[2][1]="X";
+          else if (n==9)
+          a[2][2]="X";
+          
+            for (int j=0;j<=2;j++)
+          {
+              for(int k=0;k<=2;k++)
+              { if(a[j][k]=="X"||a[j][k]=="O")
+                  System.out.print(a[j][k]+" | ");
+                  else
+                  System.out.print(" "+" | "); 
+                }
+                 System.out.println();
+                System.out.println("_____________");
+            }
+            if((a[0][0]=="X"&&a[0][1]=="X"&&a[0][2]=="X")||(a[1][0]=="X"&&a[1][1]=="X"&&a[1][2]=="X")||(a[2][0]=="X"&&a[2][1]=="X"&&a[2][2]=="X")||(a[0][0]=="X"&&a[1][0]=="X"&&a[2][0]=="X")||(a[0][1]=="X"&&a[1][1]=="X"&&a[2][1]=="X")||(a[0][2]=="X"&&a[1][2]=="X"&&a[2][2]=="X")||(a[0][0]=="X"&&a[1][1]=="X"&&a[2][2]=="X")||(a[0][2]=="X"&&a[1][1]=="X"&&a[2][0]=="X"))
+              {
+                  System.out.println();
+                  System.out.println("Congratulations !!");
+                  System.out.println("Player 1 wins");
+                   v=1;
+                  break;
+                }
+                
+            if(i!=4)
+          {
+           System.out.println("Player 2 turn");
+         int  m=sc.nextInt();
+          if (m==1)
+          a[0][0]="O";
+          else if (m==2)
+          a[0][1]="O";
+          else if (m==3)
+          a[0][2]="O";
+          else if (m==4)
+          a[1][0]="O";
+          else if (m==5)
+          a[1][1]="O";
+          else if (m==6)
+          a[1][2]="O";
+          else if (m==7)
+          a[2][0]="O";
+          else if (m==8)
+          a[2][1]="O";
+          else if (m==9)
+          a[2][2]="O";
+          
+          for (int j=0;j<=2;j++)
+          {
+              for(int k=0;k<=2;k++)
+              { if(a[j][k]=="X"||a[j][k]=="O")
+                  System.out.print(a[j][k]+" | ");
+                  else
+                  System.out.print(" "+" | "); 
+                }
+                 System.out.println();
+                System.out.println("_____________");
+            }
+             if((a[0][0]=="O"&&a[0][1]=="O"&&a[0][2]=="O")||(a[1][0]=="O"&&a[1][1]=="O"&&a[1][2]=="O")||(a[2][0]=="O"&&a[2][1]=="O"&&a[2][2]=="O")||(a[0][0]=="O"&&a[1][0]=="O"&&a[2][0]=="O")||(a[0][1]=="O"&&a[1][1]=="O"&&a[2][1]=="O")||(a[0][2]=="O"&&a[1][2]=="O"&&a[2][2]=="O")||(a[0][0]=="O"&&a[1][1]=="O"&&a[2][2]=="O")||(a[0][2]=="X"&&a[1][1]=="X"&&a[2][0]=="X"))
+              {
+                  System.out.println();
+                  System.out.println("Congratulations !!");
+                  System.out.println("Player 2 wins");
+                  v=1;
+                  break;
+                }
+        }
+    }
+    if (v!=1)
+    {
+    System.out.println();
+    System.out.println("MATCH DRAW");
+}
+}
+}
+                
+          
+          
