@@ -1,0 +1,101 @@
+package games;
+
+
+import java.util.*;
+public class RPS
+{
+    void main()
+    
+    {
+        int m=0,p=0;
+        char d=' ';
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Welcome to the game");
+         System.out.println("Rock=R");
+          System.out.println("Paper=P");
+         System.out.println("Scissor=S");
+          System.out.println("Enter your choice");
+         for(int i=0;i<=4;i++)
+         {
+             char a=sc.next().charAt(0);
+             if(a!='R'&&a!='S'&&a!='P'&&a!='r'&&a!='s'&&a!='p')
+             {
+                 System.out.println("Wrong choice entered");
+                 System.exit(0);
+                }
+                else
+                {
+                
+                double b=Math.random()*(3-1+1)+1;
+                int c=(int)b;
+                if(c==1)
+                 d='R';
+                else if(c==2)
+                 d='P';
+                 else if(c==3)
+                  d='S';
+                }
+                if(d==a||d==Character.toUpperCase(a))
+                {
+                System.out.println(d);
+                    System.out.println("Draw               Comp="+p+"    You="+m);
+                
+                }
+                else if((a=='R'||a=='r')&&(d=='P'||d=='p'))
+                {
+                    System.out.println(d);
+                    p++;
+                    System.out.println("COMP WINS          Comp="+p+"    You="+m);
+                }
+                else if((a=='P'||a=='p')&&(d=='R'||d=='r'))
+                {
+                    System.out.println(d);
+                    m++;
+                    System.out.println("YOU WINS           Comp="+p+"    You="+m);
+                }
+                  else if((a=='S'||a=='s')&&(d=='P'||d=='p'))
+                {
+                    System.out.println(d);
+                    m++;
+                    System.out.println("YOU WINS           Comp="+p+"    You="+m);
+                }  
+                else if((a=='P'||a=='p')&&(d=='S'||d=='s'))
+                {
+                    System.out.println(d);
+                    p++;
+                    System.out.println("COMP WINS          Comp="+p+"    You="+m);
+                }
+                else if((a=='R'||a=='r')&&(d=='S'||d=='s'))
+                {
+                    System.out.println(d);
+                    m++;
+                    System.out.println("YOU WINS           Comp="+p+"    You="+m);
+                }
+                else if((a=='S'||a=='s')&&(d=='R'||d=='r'))
+                {
+                    System.out.println(d);
+                    p++;
+                    System.out.println("COMP WINS          Comp="+p+"    You="+m);
+                }
+            }
+             System.out.println("--------------------------------------------------");
+             System.out.println();
+             System.out.println();
+                if(p>m)
+                {
+                    System.out.println("Total = Comp-"+p+"   You-"+m);
+                  System.out.println("COMP WINS BY  "+(p-m)+" points");
+                }
+                
+                else if(p<m)
+                {
+                    System.out.println("Total = Comp-"+p+"   You-"+m);
+                  System.out.println("YOU WINS BY  "+(m-p)+" points");
+                }
+                else if(p==m)
+                {
+                    System.out.println("Total = Comp-"+p+"   You-"+m);
+                  System.out.println("Match Draw By  "+p+"-"+m+" points");
+                }
+            }}
+                 
