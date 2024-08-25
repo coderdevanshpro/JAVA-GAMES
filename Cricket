@@ -1,0 +1,312 @@
+package games;
+
+import java.util.*;
+public class game
+{
+    int overs()
+    {Scanner sc=new Scanner(System.in);
+     System.out.println("CHOOSE OVERS");
+        int o=sc.nextInt();
+        return o;
+    }
+   void main()
+   {
+       System.out.println("WELCOME TO THE GAME");
+       System.out.println("RUNS LIMIT IS FROM 1 TO 6 ONLY");
+       System.out.println("BEST OF LUCK");
+       int e,sum1=0,sum=0;
+       String s2="",s0="";
+    Scanner sc=new Scanner(System.in);
+   
+    System.out.println("choose odd or even");
+   String s=sc.nextLine();
+   double a=Math.random()*(6-1+1)+1;
+   int b=(int)a;
+   
+   System.out.println("enter a no");
+   int c=sc.nextInt();
+   System.out.println(b);
+   int d=c+b;
+   if((d%2==0&&s.equals("even"))||(d%2!=0&&s.equals("odd")))
+   e=1;
+   else
+    e=0;
+   if(e==1)
+  
+   {
+       System.out.println("you win");
+       
+        System.out.println("choose bat or ball");
+    s0=choose();
+    }
+   else if(e==0) 
+  {
+      System.out.println("you lose");
+      
+      int f=(int)Math.random()*(2-1+1)+1;
+       if(f==1)
+       s2="bat";
+       else
+       s2="ball";
+    }
+  System.out.println("--------------------------------------");
+    if(s0.equals("bat"))
+    Mybat();
+    else if(s0.equals("ball"))
+    Myball();
+    else if(s2.equals("bat"))
+    Compbat();
+    else if(s2.equals("ball"))
+    Compball();
+}
+ 
+ void Mybat()
+  {int sum=0,sum1=0;
+  Scanner sc=new Scanner(System.in);
+  int m=overs()*6;
+  System.out.println("START BATTING");
+  for(int i=1;i<=m;i++)
+  {
+      int g=sc.nextInt();
+      double k=Math.random()*(6-1+1)+1;
+      int h=(int)k;
+      System.out.println(h);
+      if(g==h)
+      {
+          System.out.println("OUT");
+          System.out.println("TOTAL="+sum+"in"+i+"balls");
+          break;
+        }
+        else if(i==m)
+        {
+            System.out.println("OVERS FINISHED");
+          System.out.println("TOTAL="+sum+"in"+i+"balls");
+          break;
+        }
+        else
+        {
+            sum=sum+g;
+        }}
+        System.out.println("--------------------------------------");
+       System.out.println("START BALLING");
+  for(int i=1;i<=m;i++)
+  { 
+      int g1=sc.nextInt();
+      double k1=Math.random()*(6-1+1)+1;
+      int h1=(int)k1;
+      System.out.println(h1);
+      if(g1!=h1)
+      {
+         sum1=sum1+h1;
+         
+         if(sum1>sum)
+         {
+         System.out.println("you lose by"+(sum1-sum)+"runs");
+         break;
+        }
+         System.out.println("comp need "+(sum-sum1+1)+"runs in "+(m-i)+"balls");
+        }
+        else
+        {
+             System.out.println("OUT");
+          System.out.println("TOTAL="+sum1+"in"+i+"balls");
+          break;
+        }}
+      System.out.println("--------------------------------------");
+      if(sum>sum1)
+      System.out.println("you win by"+(sum-sum1)+"runs");
+      else if(sum1==sum)
+      System.out.println("Match Draw");
+      System.out.println("THANKS FOR PLAYING");
+    }
+    
+    void Myball()
+  {int sum=0,sum1=0;
+  Scanner sc=new Scanner(System.in);
+   int m=overs()*6;
+  System.out.println("START BAllING");
+  for(int i=1;i<=m;i++)
+  {
+      int g=sc.nextInt();
+      double k=Math.random()*(6-1+1)+1;
+      int h=(int)k;
+      System.out.println(h);
+      if(g==h)
+      {
+          System.out.println("OUT");
+          System.out.println("TOTAL="+sum+"in"+i+"balls");
+          break;
+        }
+        else if(i==m)
+        {
+            System.out.println("OVERS FINISHED");
+          System.out.println("TOTAL="+sum+"in"+i+"balls");
+          break;
+        }
+        
+        else
+        {
+            sum=sum+h;
+        }}
+        System.out.println("--------------------------------------");
+       System.out.println("START BATTING");
+  for(int i=1;i<=m;i++)
+  { 
+      int g1=sc.nextInt();
+      double k1=Math.random()*(6-1+1)+1;
+      int h1=(int)k1;
+      System.out.println(h1);
+      if(g1!=h1)
+      {
+         sum1=sum1+g1;
+         
+         if(sum1>sum)
+         {
+         System.out.println("you win by"+(sum1-sum)+"runs");
+         break;
+        }
+         System.out.println("you need "+(sum-sum1+1)+"runs in "+(m-i)+"balls");
+        }
+        else
+        {
+             System.out.println("OUT");
+          System.out.println("TOTAL="+sum1+"in"+i+"balls");
+          break;
+        }}
+      System.out.println("--------------------------------------");
+      if(sum>sum1)
+      System.out.println("you lose by"+(sum-sum1)+"runs");
+      else if(sum1==sum)
+      System.out.println("Match Draw");
+      System.out.println("THANKS FOR PLAYING");
+    }
+    
+     
+    void Compbat()
+  {int sum=0,sum1=0;
+  Scanner sc=new Scanner(System.in);
+   int m=overs()*6;
+  System.out.println("START BALLING");
+  for(int i=1;i<=m;i++)
+  {
+      int g=sc.nextInt();
+       double k=Math.random()*(6-1+1)+1;
+      int h=(int)k;
+      System.out.println(h);
+      if(g==h)
+      {
+          System.out.println("OUT");
+          System.out.println("TOTAL="+sum+"in"+i+"balls");
+          break;
+        }
+        else if(i==m)
+        {
+            System.out.println("OVERS FINISHED");
+          System.out.println("TOTAL="+sum+"in"+i+"balls");
+          break;
+        }
+        else
+        {
+            sum=sum+h;
+        }}
+        System.out.println("--------------------------------------");
+       System.out.println("START BATTING");
+  for(int i=1;i<=m;i++)
+  { 
+      int g1=sc.nextInt();
+      double k1=Math.random()*(6-1+1)+1;
+      int h1=(int)k1;
+      System.out.println(h1);
+     if(g1!=h1)
+      {
+         sum1=sum1+g1;
+         
+         if(sum1>sum)
+         {
+         System.out.println("you win by"+(sum1-sum)+"runs");
+         break;
+        }
+         System.out.println("you need "+(sum-sum1+1)+"runs in "+(m-i)+"balls");
+        }
+        else
+        {
+             System.out.println("OUT");
+          System.out.println("TOTAL="+sum1+"in"+i+"balls");
+          break;
+        }}
+      System.out.println("--------------------------------------");
+      if(sum>sum1)
+      System.out.println("you lose by"+(sum-sum1)+"runs");
+      else if(sum1==sum)
+      System.out.println("Match Draw");
+      System.out.println("THANKS FOR PLAYING");
+    }
+
+
+    void Compball()
+  {int sum=0,sum1=0;
+  Scanner sc=new Scanner(System.in);
+   int m=overs()*6;
+  System.out.println("START BATTING");
+  for (int i=1;i<=m;i++)
+  {
+      int g=sc.nextInt();
+       double k=Math.random()*(6-1+1)+1;
+      int h=(int)k;
+      System.out.println(h);
+      if(g==h)
+      {
+          System.out.println("OUT");
+          System.out.println("TOTAL="+sum+"in"+i+"balls");
+          break;
+        }
+        else if(i==m)
+        {
+            System.out.println("OVERS FINISHED");
+          System.out.println("TOTAL="+sum+"in"+i+"balls");
+          break;
+        }
+       
+        else
+        {
+            sum=sum+g;
+        }}
+        System.out.println("--------------------------------------");
+       System.out.println("START BALLING");
+  for(int i=1;i<=m;i++)
+  { 
+      int g1=sc.nextInt();
+      double k1=Math.random()*(6-1+1)+1;
+      int h1=(int)k1;
+      System.out.println(h1);
+      if(g1!=h1)
+      {
+         sum1=sum1+h1;
+         
+         if(sum1>sum)
+         {
+         System.out.println("you lose by"+(sum1-sum)+"runs");
+         break;
+        }
+         System.out.println("comp need "+(sum-sum1+1)+"runs in "+(m-i)+"balls");
+        }
+        else
+        {
+             System.out.println("OUT");
+          System.out.println("TOTAL="+sum1+"in"+i+"balls");
+          break;
+        }}
+      System.out.println("--------------------------------------");
+      if(sum>sum1)
+      System.out.println("you win by"+(sum-sum1)+"runs");
+      else if(sum1==sum)
+      System.out.println("Match Draw");
+      System.out.println("THANKS FOR PLAYING");
+    }
+   String choose()
+   {
+       Scanner sc=new Scanner(System.in);
+       String s1;
+       return s1=sc.nextLine();
+    }
+}
